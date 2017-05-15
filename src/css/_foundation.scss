@@ -7,12 +7,15 @@ body {
 }
 
 html>body {
-  min-width: 980px;
+  // min-width: 980px;
+  color: #111;
 }
 
 a {
+  text-decoration: none;
   outline: none;
   -webkit-touch-callout: none;
+  color: #111;
 }
 
 a:hover {
@@ -104,6 +107,12 @@ body {
   position: relative;
   height: 100%;
   min-height: 100%;
+  @include sp($point-sp) {
+    padding: 30px 0 0;
+  }
+  @include pc($point-pc) {
+    padding: 60px 0 0;
+  }
 }
 
 #contents {

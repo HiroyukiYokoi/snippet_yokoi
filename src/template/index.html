@@ -8,7 +8,7 @@
   @@include('head.html')
 </head>
 
-<body>
+<body class="indexPage">
   <div class="l-container">
 
     <!-- l-header START -->
@@ -19,13 +19,68 @@
     @@include('l-gnav.html')
     <!-- l-gnav END -->
 
-    <div class="l-mainVisual">l-mainVisual</div>
     <div class="l-contents">
-      <div class="l-sub">l-sub</div>
       <main class="l-main">
+        <div class="index__inner">
+          <section id="htmlcss" class="index__htmlcss">
+            <h3 class="secTitle"><a href="/htmlcss"></a>HTML/CSS</h3>
+            <ul class="index__list">
+              <li class="index__listItem">HTMLテンプレート
+                <ul class="index__childList">
+                  <li class="childList__item"><a href="/htmlcss/snippet01.html#list01">ヘッダ</a></li>
+                  <li class="childList__item"><a href="/htmlcss/snippet01.html#list02">フッタ</a></li>
+                  <li class="childList__item"><a href="/htmlcss/snippet01.html#list03">都道府県一覧</a></li>
+                </ul>
+              </li>
+              <li class="index__listItem">position: absolute;
+                <ul class="index__childList">
+                  <li class="childList__item"><a href="/htmlcss/snippet02.html#list01">親要素から位置を取得する</a></li>
+                  <li class="childList__item"><a href="/htmlcss/snippet02.html#list02">上下左右中央揃え</a></li>
+                  <li class="childList__item"><a href="/htmlcss/snippet02.html#list03">上下左右中央揃え（transform使用）</a></li>
+                </ul>
+              </li>
+              <li class="index__listItem">display: flex;
+                <ul class="index__childList">
+                  <li class="childList__item"><a href="/htmlcss/snippet03.html#list01">画像とテキストが同一BOXに入っている場合</a></li>
+                </ul>
+              </li>
+            </ul>
+          </section>
 
-        <p>ここにコンテンツhoge</p>
+          <section id="javascript" class="index__javascript">
+            <h3 class="secTitle">JavaScript</h3>
+            <ul class="index__list">
+              <li class="index__listItem">SPメニュー
+                <ul class="index__childList">
+                  <li class="childList__item"><a href="">全画面メニュー</a></li>
+                </ul>
+              </li>
+              <li class="index__listItem">プラグイン
+                <ul class="index__childList">
+                  <li class="childList__item"><a href="">Swiper</a></li>
+                </ul>
+              </li>
+            </ul>
+          </section>
 
+          <section id="svg" class="index__svg">
+            <h3 class="secTitle">SVG</h3>
+            <ul class="index__list">
+              <li class="index__listItem">SVGフィルタ
+                <ul class="index__childList">
+                  <li class="childList__item"><a href="">グレースケールを適用する</a></li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+
+          <section id="php" class="index__php">
+            <h3 class="secTitle">PHP</h3>
+            <ul class="index__list">
+              <li class="index__listItem"><a href="">フォーム</a></li>
+            </ul>
+          </section>
+        </div>
       </main>
     </div>
     <!-- l-footer START -->

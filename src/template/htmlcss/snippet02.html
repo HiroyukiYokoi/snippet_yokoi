@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>title</title>
+  @@include('head.html')
+</head>
+
+<body class="htmlPage positionAbsolute">
+  <div class="l-container">
+
+    <!-- l-header START -->
+    @@include('l-header.html')
+    <!-- l-header END -->
+
+    <!-- l-gnav START -->
+    @@include('l-gnav.html')
+    <!-- l-gnav END -->
+
+    <div class="l-contents">
+      <main class="l-main">
+        <div class="htmlPage__inner">
+          <section class="absolute__header">
+            <h3 class="secTitle">親要素から位置を取得する</h3>
+          </section>
+          <section class="absolute__header">
+            <h3 class="secTitle">上下左右中央揃え</h3>
+          </section>
+          <section class="absolute__header">
+            <h3 class="secTitle">上下左右中央揃え（transform使用）</h3>
+          </section>
+        </div>
+      </main>
+    </div>
+    <!-- l-footer START -->
+    @@include('l-footer.html')
+    <!-- l-footer START -->
+  </div>
+  @@include('javascript.html')
+</body>
+
+</html>

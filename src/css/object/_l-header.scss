@@ -7,4 +7,13 @@
 @include pc02($point-pc02) {}
 */
 
-.l-header{}
+.site_title {
+  text-align: center;
+  font-size: 32px;
+  @include sp($point-sp) {
+    margin: 0 auto 30px;
+  }
+  @include pc($point-pc) {
+    margin: 0 auto 60px;
+  }
+}
