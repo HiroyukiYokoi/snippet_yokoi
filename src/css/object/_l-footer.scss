@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+/*
+@include sp($point-sp)
+@include tb($point-tb) {}
+@include pc01($point-pc01) {}
+@include pc02($point-pc02) {}
+*/
+
+.l-footer {
+  box-sizing: border-box;
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+  animation-fill-mode: both;
+}
