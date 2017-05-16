@@ -1,25 +1,305 @@
 @charset "utf-8";
-
 /*
 @include sp($point-sp)
 @include pc($point-pc) {}
 */
-
 .htmlPage {
   &__inner {
-    padding: 0 40px;
+    @include sp($point-sp) {
+      padding: 0 30px;
+    }
+    @include pc($point-pc) {
+      padding: 0 80px;
+    }
   }
+
   .c-childPage__title {
     margin: 0 0 50px;
   }
-  &.template {
-    .template {
 
+  &.template {
+    .secTitle {
+      @include sp($point-sp) {}
+      @include pc($point-pc) {
+        margin: 60px 0 20px;
+      }
+    }
+
+    .template {}
+  }
+
+  &.positionAbsolute {
+    .absolute {}
+
+    .Acquisition {
+      border: 1px solid #ddd;
+      @include sp($point-sp) {
+        padding: 20px 20px 0;
+        margin: 0 0 40px;
+      }
+      @include pc($point-pc) {
+        padding: 20px;
+        margin: 0 0 60px;
+      }
+      &__list {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        @include sp($point-sp) {
+          margin: 0 0 10px;
+        }
+        @include pc($point-pc) {
+          justify-content: space-between;
+        }
+      }
+
+      &__item {
+        @include pc($point-pc) {
+          width: 339px;
+          position: relative;
+          padding-bottom: 40px; //下の固定位置リンクの要素の高さを担保
+        }
+      }
+
+      &__SPbox {
+        @include sp($point-sp) {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+      }
+
+      &__thumb {
+        height: auto;
+        @include sp($point-sp) {
+          width: 50%;
+          margin: 0 0 17px;
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+        @include pc($point-pc) {
+          width: 339px;
+          margin: 0 0 36px;
+          height: 226px;
+          overflow: hidden;
+        }
+      }
+
+      &__title {
+        text-align: center;
+        font-weight: 500;
+        @include sp($point-sp) {
+          width: 50%;
+          background-color: #f2f2f2;
+          font-size: 15px;
+          font-weight: normal;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 0 17px;
+          line-height: (22/15);
+        }
+        @include pc($point-pc) {
+          font-size: 20px;
+          margin: 0 0 22px;
+        }
+      }
+
+      &__caption {
+        @include sp($point-sp) {
+          font-size: 12px;
+          line-height: (24/12);
+          margin: 0 0 22px;
+          padding: 0 3px;
+        }
+        @include pc($point-pc) {
+          font-size: 14px;
+          line-height: (24/14);
+          padding: 0 7px;
+        }
+
+      }
+
+      .c-moreLink {
+        @include sp($point-sp) {
+          margin: 0 0 20px;
+          padding: 0 3px;
+        }
+        @include pc($point-pc) {
+          position: absolute;
+          bottom: 0;
+          padding: 0 7px;
+          margin: 27px 0 0;
+        }
+      }
     }
   }
-  &.absolute {
-    .absolute {
+  &.displayFlex {
+    .flex {}
 
+    .allProducts {
+      border: 1px solid #ddd;
+      @include sp($point-sp) {
+
+      }
+      @include pc($point-pc) {
+        padding: 40px 0;
+        margin: 0 0 60px;
+      }
+      .products {
+        &__inner {
+          @include sp($point-sp) {
+
+          }
+          @include pc($point-pc) {
+            width: 858px;
+            margin: 0 auto;
+            padding: 0 20px;
+            box-sizing: content-box;
+          }
+        }
+        &__list {
+          &__col2 {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .products {
+              &__item {
+                @include sp($point-sp) {
+
+                }
+                @include pc($point-pc) {
+                  // width: 414px;
+                }
+                a {
+                  display: block;
+                }
+              }
+              &__thumb {
+                img {
+                  @include sp($point-sp) {
+
+                  }
+                  @include pc($point-pc) {
+                    margin: 15px 15px 0 15px;
+                    width: 384px;
+                  }
+                }
+              }
+              &__textBox {
+                @include sp($point-sp) {
+
+                }
+                @include pc($point-pc) {
+                  // position: relative;
+                  // height: 140px;
+                }
+              }
+              &__text {
+                @include sp($point-sp) {
+
+                }
+                @include pc($point-pc) {
+                  text-align: center;
+                  margin: 20px;
+                  // position: absolute;
+                  // top: 50%;
+                  // transform: translateY(-50%);
+                }
+              }
+              &__name {
+                @include sp($point-sp) {
+
+                }
+                @include pc($point-pc) {
+                  width: 374px;
+                  display: block;
+                  margin: 0 0 10px;
+                  font-size: 16px;
+                }
+              }
+              &__description {
+                letter-spacing: 1.5px;
+                @include sp($point-sp) {
+
+                }
+                @include pc($point-pc) {
+                  width: 374px;
+                  display: block;
+                  font-size: 12px;
+                  line-height: 1.6;
+                }
+              }
+            }
+          }
+        }
+        &__item {
+          background: #f5f9f8;
+          @include sp($point-sp) {
+
+          }
+          @include pc($point-pc) {
+            margin: 0 0 30px;
+          }
+          a {
+            @include sp($point-sp) {
+
+            }
+            @include pc($point-pc) {
+
+            }
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
+        &__thumb {
+          img {
+            @include sp($point-sp) {
+
+            }
+            @include pc($point-pc) {
+
+            }
+          }
+        }
+        &__text {
+          @include sp($point-sp) {
+
+          }
+          @include pc($point-pc) {
+
+          }
+        }
+        &__name {
+          font-weight: bold;
+          @include sp($point-sp) {
+
+          }
+          @include pc($point-pc) {
+
+          }
+          &Note {
+            @include sp($point-sp) {
+
+            }
+            @include pc($point-pc) {
+              font-size: 14px;
+            }
+          }
+        }
+        &__description {
+          @include sp($point-sp) {
+
+          }
+          @include pc($point-pc) {
+          }
+        }
+      }
     }
   }
 }

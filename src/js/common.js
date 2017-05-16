@@ -5,6 +5,32 @@ $(function() {
   $('.js-matchHeight4').matchHeight();
   $('.js-matchHeight5').matchHeight();
 
+  // SP メニュー開閉
+  function HeaderMenuToggle(){
+    var state = false,
+        scrollpos,
+        menuStatus = 'is-open is-close',
+        $spMenu = $('.javascriptPage.spMenu.iframe .l-gNav');
+
+    $('.javascriptPage.spMenu.iframe .l-gNav__btn a').on('click', function() {
+      if(state == false) {
+        scrollpos = $(window).scrollTop();
+        $('body.javascriptPage.spMenu.iframe').addClass('fixed').css({'top': -scrollpos});
+        $spMenu.toggleClass(menuStatus);
+        state = true;
+      }
+    });
+
+    $('.javascriptPage.spMenu.iframe .l-gNav__close a').on('click', function() {
+      setTimeout(function(){
+        $('body.javascriptPage.spMenu.iframe').removeClass('fixed').css({'top': 0});
+        window.scrollTo( 0 , scrollpos );
+        $spMenu.toggleClass(menuStatus);
+        state = false;
+      }, 0);
+    });
+  }
+
   // ウィンドウリサイズ時のSPメニューちらつき防止
   var ResizeManage = function() {
     this.initialize.apply(this, arguments);
@@ -49,6 +75,7 @@ $(function() {
     }
   });
 
+  // トップへ戻るボタン
   function menuNavIcon() {
     if (resizeManage.isSmall) {
       $('.l-pagetop a').hover(
@@ -81,4 +108,5 @@ $(function() {
   });
 
   menuNavIcon();
+  HeaderMenuToggle();
 });
