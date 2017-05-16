@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>title</title>
+  @@include('head.html')
+</head>
+
+<body class="javascriptPage spMenu">
+  <div class="l-container">
+
+    <!-- l-header START -->
+    @@include('l-header.html')
+    <!-- l-header END -->
+
+    <!-- l-gnav START -->
+    @@include('l-gnav.html')
+    <!-- l-gnav END -->
+
+    <div class="l-contents">
+      <main class="l-main">
+        <div class="javascript inner">
+          <h2 class="c-childPage__title">SPメニュー</h2>
+
+          <section id="list01" class="javascript__spMenu">
+            <h3 class="secTitle">全画面メニュー</h3>
+            <h4 class="exampleTitle">上下スライド + opacity</h4>
+            <div>jQueryではclassの付け外しのみ。CSSでtransitionの設定。</div>
+            <div>出力結果</div>
+            <iframe class="exam01" src="/javascript/sp_menu/exam01.html" width="320" height="568">
+              このページでは、インラインフレームを使用しています。
+              対応しているブラウザで閲覧してください。
+            </iframe>
+            <div>HTML</div>
+            <script src="https://gist.github.com/HiroyukiYokoi/5de9715f90b0745786985f93770fef6a.js"></script>
+            <div>CSS</div>
+            <script src="https://gist.github.com/HiroyukiYokoi/acab7bab277454d364ac1f8d8ebf0705.js"></script>
+            <div>JavaScript</div>
+            <script src="https://gist.github.com/HiroyukiYokoi/27975009f6f0e31fd65108116920aa6f.js"></script>
+          </section>
+
+          <section id="list02" class="javascript__spMenu">
+            <h3 class="secTitle">ブラウザ幅リサイズ時のSPメニューのちらつき防止</h3>
+            <div>何もしていないとSPのメディアクエリが有効になった時点で、SPメニューがちらつく。</div>
+            <div id="resizable01" class="ui-widget-content">
+              <iframe class="exam02" id="exam02" src="/javascript/sp_menu/exam02.html">
+                このページでは、インラインフレームを使用しています。
+                対応しているブラウザで閲覧してください。
+              </iframe>
+            </div>
+            <div>JavaScriptでメディアクエリを追加して、setTimeoutを用いることで、メディアクエリの有効化を一瞬遅らせるのがポイント。<br>
+            また、JavaScriptの方でclassの追加削除をする。</div>
+            <div id="resizable02" class="ui-widget-content">
+              <iframe class="exam03" id="exam03" src="/javascript/sp_menu/exam01.html">
+                このページでは、インラインフレームを使用しています。
+                対応しているブラウザで閲覧してください。
+              </iframe>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <!-- l-footer START -->
+    @@include('l-footer.html')
+    <!-- l-footer START -->
+  </div>
+  @@include('javascript.html')
+</body>
+
+</html>
