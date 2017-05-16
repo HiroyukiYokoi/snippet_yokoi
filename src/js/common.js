@@ -9,16 +9,16 @@ $(function() {
   function HeaderMenuToggle() {
     var state = false,
       scrollpos,
-      menuStatus = 'is-close is-open',
       $spMenu = $('.l-gNav');
 
     $('.javascriptPage.spMenu.iframe .l-gNav__btn a').bind("click", function(e) {
-      if (state == false) {
+      if (state === false) {
         scrollpos = $(window).scrollTop();
         $('body.javascriptPage.spMenu.iframe').addClass('fixed').css({
           'top': -scrollpos
         });
-        $spMenu.toggleClass(menuStatus);
+        $spMenu.addClass('is-open');
+        $spMenu.removeClass('is-close');
         state = true;
       }
       return false;
@@ -30,7 +30,8 @@ $(function() {
           'top': 0
         });
         window.scrollTo(0, scrollpos);
-        $spMenu.toggleClass(menuStatus);
+        $spMenu.removeClass('is-open');
+        $spMenu.addClass('is-close');
         state = false;
       }, 0);
       return false;
