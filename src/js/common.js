@@ -278,6 +278,11 @@ $(function() {
     return false;
   });
 
+  // // お問い合わせフォーム ポリシー箇所スクロールバー
+  // $('.Contact__policy').scrollpanel({
+  //   prefix: 'sp-'
+  // });
+
   menuNavIcon();
   HeaderMenuToggle();
 });
