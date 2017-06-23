@@ -6,14 +6,6 @@
 @charset "utf-8";
 
 .indexPage {
-  .secTitle {
-    @include sp($point-sp) {
-      margin: 0 0 10px;
-    }
-    @include pc($point-pc) {
-      margin: 0 0 20px;
-    }
-  }
   .index {
     &__inner {
       @include sp($point-sp) {
@@ -24,7 +16,7 @@
       }
     }
     &__list {
-      list-style: none;
+      text-align: center;
       @include sp($point-sp) {
         margin: 0 0 60px;
       }
@@ -32,48 +24,44 @@
         margin: 0 0 60px;
       }
       &Item {
+        border: 1px solid #aaa;
+        display: inline-block;
+        margin: 0 0 10px;
         @include sp($point-sp) {
+          width: 80vw;
         }
         @include pc($point-pc) {
-          margin: 0 0 10px;
         }
-      }
-    }
-    &__childList {
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      @include sp($point-sp) {
-        margin: 0 0 15px;
-      }
-      @include pc($point-pc) {
-        margin: 0 0 30px;
-      }
-      .childList {
-        &__item {
+        a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
           @include sp($point-sp) {
-            margin: 5px 0;
-            width: 100%;
+            justify-content: space-between;
           }
           @include pc($point-pc) {
-            margin: 10px;
+            justify-content: center;
           }
-          a {
-            font-size: 12px;
-            border: 1px solid #999;
-            display: block;
-            text-align: center;
+        }
+        .listItem {
+          &__title {
+            font-weight: normal;
+            background: #0D57A7;
+            color: #fff;
+            padding: 10px 20px;
             @include sp($point-sp) {
-              display: block;
-              width: 100%;
-              padding: 10px 20px;
+              font-size: 12px;
             }
             @include pc($point-pc) {
-              padding: 20px 30px;
+              font-size: 15px;
             }
-            &:hover {
-              background: #ddd;
+          }
+          &__image {
+            img {
+              @include sp($point-sp) {
+                width: 40vw;
+                height: auto;
+              }
             }
           }
         }

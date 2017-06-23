@@ -36,3 +36,14 @@
     }
   }
 }
+
+.l-footer {
+  display: block;
+  width: 100%;
+  height: auto;
+  &__img {
+    display: block;
+    text-align: center;
+    padding: 20px 0;
+  }
+}
