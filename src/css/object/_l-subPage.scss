@@ -8,10 +8,10 @@
 .subPage {
   &__inner {
     @include sp($point-sp) {
-      padding: 0 20px 40px;
+      padding: 50px 20px 40px;
     }
     @include pc($point-pc) {
-      padding: 0 80px 40px;
+      padding: 0 120px 40px;
     }
   }
   &__title {
@@ -87,10 +87,11 @@
               }
               @include pc($point-pc) {
                 margin: 0 0 20px;
+                font-size: 14px;
               }
               .point {
                 &__title {
-
+                  margin: 0 0 5px;
                 }
                 &__list {
                   &Item {
