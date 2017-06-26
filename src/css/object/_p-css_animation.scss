@@ -11,47 +11,169 @@
       height: 60px;
       border-radius: 30px;
       line-height: 56px;
-      font-size: 20px;
+      box-sizing: border-box;
       position: relative;
       overflow: hidden;
       z-index: 2;
-      font-weight: bold;
-      letter-spacing: 4px;
       transition: .4s;
-      @include sp($point-sp) {
-        width: 280px;
-      }
-      @include pc($point-pc) {
-        padding: 0 56px;
-      }
+      width: 280px;
       &::after {
-        @include pc($point-pc) {
-          content: "";
-          width: 160px;
-          height: 40px;
-          border-radius: 30px;
-          position: absolute;
-          background: #6888ce;
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%, -50%);
-          transition: .5s;
-          opacity: 0;
-          z-index: -1;
-        }
+        content: "";
+        width: 160px;
+        height: 40px;
+        border-radius: 30px;
+        position: absolute;
+        background: #6888ce;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: .5s;
+        opacity: 0;
+        z-index: -1;
       }
       &:hover {
-        @include pc($point-pc) {
-          color: #fff;
+        color: #fff;
+        &::after {
+          content: "";
+          width: 400px;
+          height: 100px;
+          opacity: 1;
+          transition: .7s;
+        }
+      }
+    }
+    &.example02 {
+      color: #6888ce;
+      box-shadow: 0 0 0 2px #6888ce inset; //borderではなくbox-shadowで線を書く
+      display: inline-block;
+      text-align: center;
+      height: 60px;
+      line-height: 60px;
+      box-sizing: border-box;
+      position: relative;
+      transition: .2s;
+      width: 280px;
+      &::before,
+      &::after {
+        content: "";
+        width: 0;
+        height: 0;
+        position: absolute;
+        border: 2px solid transparent;
+        box-sizing: border-box;
+      }
+      &::before {
+        top: 0;
+        left: 0;
+      }
+      &::after {
+        bottom: 0;
+        right: 0;
+      }
+      &:hover {
+        color: #ff9d12;
+        &::before,
+        &::after {
+          width: 100%;
+          height: 100%;
+        }
+        &::before {
+          border-color: #ff9d12 #ff9d12 transparent transparent;
+          transition: width .2s ease-out,
+                      height .1s ease-out .2s;
         }
         &::after {
-          @include pc($point-pc) {
-            content: "";
-            width: 400px;
-            height: 100px;
-            opacity: 1;
-            transition: .7s;
-          }
+          border-color: transparent transparent #ff9d12 #ff9d12;
+          transition: border-color 0s ease-out .3s,
+                      width .2s ease-out .3s,
+                      height .1s ease-out .5s;
+        }
+      }
+    }
+  }
+}
+
+.l-gNav {
+  &__btn {
+    height: 56px;
+    width: 60px;
+    right: 0;
+    margin: 0 auto;
+    position: relative;
+    a {
+      width: 20px;
+      height: 16px;
+      display: block;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      &::before,
+      &::after {
+        content: "";
+        width: 20px;
+        height: 0px;
+        display: block;
+        position: absolute;
+        border: 1px solid #000;
+        border-radius: 1px;
+        top: 10px;
+        transition: .4s transform, transform 0.4s cubic-bezier(0.22,0.61,0.36,1);
+      }
+      &::before {
+        top: 14px;
+        transform: translateZ(0) rotate(0deg);
+      }
+      &::after {
+        top: 0px;
+        transform: translateZ(0) rotate(0deg);
+      }
+      &:hover {
+        opacity: 1;
+      }
+    }
+    span {
+      &::before {
+        content: "";
+        width: 20px;
+        height: 0px;
+        display: block;
+        position: absolute;
+        z-index: 200;
+        border: 1px solid #000;
+        border-radius: 1px;
+        top: 7px;
+        visibility: visible;
+        opacity: 1;
+        transition: .4s opacity;
+      }
+    }
+    &.navOn {
+      visibility: visible;
+      transform: translateY(0);
+      a {
+        width: 24px;
+        height: 24px;
+        top: 16px;
+        right: 18px;
+        &::before,
+        &::after {
+          width: 25px;
+          height: 0px;
+          border-radius: 1px;
+          top: 10px;
+          border-color: #000;
+        }
+        &::before {
+          transform: translateZ(0) rotate(135deg);
+        }
+        &::after {
+          transform: translateZ(0) rotate(-135deg);
+        }
+      }
+      span {
+        &::before {
+          visibility: hidden;
+          opacity: 0;
         }
       }
     }
